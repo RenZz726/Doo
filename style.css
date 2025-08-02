@@ -438,7 +438,8 @@ h3 {
 .promotion-cards {
     /* outline: 1px solid red; */
     display: flex;
-    overflow-x: auto;
+    overflow-x: scroll;
+    scrollbar-width: none; 
     /* scroll-snap-type: x mandatory;  */
     /* flex: 0 0 auto;  */
     min-width: 90%;
