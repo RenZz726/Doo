@@ -336,6 +336,14 @@ h3 {
     gap: 5px;
 }
 
+.highlights .uup {
+    margin-bottom: -327px;
+    /* background-color: red; */
+}
+.highlights .bot {
+    background-color: red;
+    padding-top: 273px;
+}
 .highlights img {
     width: 372px;
     height: 180px;
