@@ -5,12 +5,16 @@
     padding: 0;
     margin: 0;
 }
-
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
 body {
     font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
-    letter-spacing:normal;
+    letter-spacing: normal;
 }
 
 :root {
@@ -30,6 +34,7 @@ header .top-nav {
     display: flex;
     gap: 9px;
 }
+
 .top-nav svg {
     height: 62px;
     width: 62px;
@@ -52,10 +57,12 @@ header .top-nav {
     margin-right: 20px;
     color: rgb(83, 82, 82);
 }
+
 .rating span {
     font-size: 14px;
     font-weight: 500;
 }
+
 .star img {
     width: 10px;
     height: 10px;
@@ -73,6 +80,97 @@ header .top-nav {
 
 }
 
+header .top-nav-change {
+    padding: 0px 24px 0px 16px;
+}
+
+
+.top-nav-change .sign-in {
+    background-color: #d91400;
+    border-radius: 30px;
+    padding: .5rem .7rem .6rem .7rem;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    font-weight: bold;
+    font-size: .98rem;
+    margin-top: 16px;
+    font-weight: bold;
+    position: absolute;
+    z-index: 2;
+    right: 130px;
+    display: none;
+}
+
+.top-nav-change .sign-up {
+    background-color: white;
+    border-radius: 30px;
+    padding: 10px 19px;
+    color: #606060;
+    border: none;
+    font-weight: bold;
+    font-size: .98rem;
+    margin-top: 16px;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    z-index: 2;
+    display: none;
+}
+
+.sticky {
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 8px 8px 8px;
+    height: 52px;
+    position: sticky;
+    top: 0px;
+    z-index: 7;
+    display: none;
+    background-color: white;
+}
+
+.sticky.show {
+    display: flex;
+}
+
+.sticky .ch {
+    display: flex;
+    gap: 10px;
+}
+
+.sticky svg {
+    width: 40;
+    height: 40;
+}
+
+.sticky .sign-in {
+    background-color: #d91400;
+    border-radius: 30px;
+    padding: .5rem .7rem .6rem .7rem;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    font-weight: bold;
+    font-size: .98rem;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.sticky .sign-up {
+    background-color: white;
+    border-radius: 30px;
+    padding: 10px 19px;
+    color: #606060;
+    border: none;
+    font-weight: bold;
+    font-size: .98rem;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
+/* main  */
 .hero {
     background-image: url('hero_desktop.png');
     background-size: cover;
@@ -85,64 +183,59 @@ header .top-nav {
     justify-content: space-between;
 
 }
-.no {
+
+.hero .l-btns {
     display: flex;
-    flex-direction: row;
+    justify-content: right;
     gap: 10px;
 }
-.btnss {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-}
+
 .login-btn {
     text-align: center;
 }
 
 .login-bn {
-        background-color: white;
-        border-radius: 30px;
-        padding: .5rem .7rem .6rem .7rem;
-        color: black;
-        border: none;
-        font-weight: bold;
-        font-size: .98rem;
-        margin-top: 16px;
-    }
+    background-color: white;
+    border-radius: 30px;
+    padding: .5rem .7rem .6rem .7rem;
+    color: black;
+    border: none;
+    font-weight: bold;
+    font-size: .98rem;
+    margin-top: 16px;
+}
+
+.loc-btns .login-change {
+    align-items: center;
+    background-color: white;
+    border-radius: 30px;
+    border: none;
+    padding: .5rem 1rem;
+    gap: .4rem;
+    font-weight: bold;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.4);
+    display: none;
+}
+
+.loc-btns .login-change-2 {
+    align-items: center;
+    background-color: white;
+    border-radius: 30px;
+    border: none;
+    padding: .5rem 1rem;
+    gap: .4rem;
+    font-weight: bold;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.4);
+    display: none;
+}
+
 .button1 {
     display: flex;
     margin-right: 1.5rem;
     margin-top: .8rem;
     justify-content: right;
 }
-.btnss .tag {
-    display: none;
-}
-.btnss .sign-in {
-        background-color: #d91400;
-        border-radius: 30px;
-        padding: .5rem .7rem .6rem .7rem;
-        color: white;
-        padding: 10px 16px;
-        border: none;
-        font-weight: bold;
-        font-size: .98rem;
-        margin-top: 16px;
-        display: none;
-        font-weight: bold;
-    }
-.btnss .sign-up {
-    background-color: white;
-    border-radius: 30px;
-    padding: 10px 19px;
-    color: #606060;
-    border: none;
-    font-weight: bold;
-    font-size: .98rem;
-    margin-top: 16px;
-    display: none;
-    font-weight: bold;
-}
+
 .hero .open-app {
     background-color: var(--primary);
     border-radius: 30px;
@@ -157,12 +250,9 @@ header .top-nav {
     display: flex;
     justify-content: center;
     gap: 10px;
-    font-size: 1.2rem;
     align-items: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 500;
-    color: white;
-    padding: 10px;
+    margin: 51px 0 0 0;
+    /* padding: 10px; */
 }
 
 .hero .title2 {
@@ -185,7 +275,7 @@ header .top-nav {
 .heading {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 22px;
 }
 
 .location {
@@ -195,10 +285,14 @@ header .top-nav {
     gap: 20px;
 }
 
+.location .grp {
+    display: flex;
+}
+
 .location .loc-items {
     display: flex;
     align-items: center;
-    gap: 9px;
+    gap: 3px;
     background-color: white;
     padding: .4rem 1rem .4rem .1rem;
     border-radius: 30px;
@@ -209,6 +303,7 @@ header .top-nav {
     color: rgb(78, 80, 78);
     font-size: 16px;
     border: none;
+    padding: 0;
 }
 
 .loc-items .search svg {
@@ -229,6 +324,7 @@ header .top-nav {
 .location .loc-btns {
     display: flex;
     gap: 9px;
+    margin-bottom: 150px;
 }
 
 .loc-btns .login {
@@ -254,6 +350,10 @@ header .top-nav {
     box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.4);
 }
 
+.location .loc-items .new {
+    display: none;
+}
+
 /* ad section */
 
 .ad-container {
@@ -267,6 +367,8 @@ header .top-nav {
     border: none;
     border-radius: 10px;
     font-family: "Segoe UI";
+    width: 331px;
+    justify-self: center;
 }
 
 .ad-top {
@@ -318,6 +420,7 @@ h3 {
     flex-direction: column;
     align-items: center;
 }
+
 .feature-card {
     display: flex;
     font-size: 18px;
@@ -346,13 +449,14 @@ h3 {
 .feature-card .ad-link {
     display: flex;
     align-items: center;
-    gap: 3px;
+    justify-content: center;
+    gap: 5px;
 }
 
 .card-contents {
     display: flex;
     flex-direction: column;
-    font-weight: 480;
+    font-weight: 400;
 }
 
 .card-contents svg {
@@ -405,6 +509,14 @@ h3 {
     font-size: 14px;
     font-weight: 500;
     margin-top: 10px;
+}
+
+.highlights .sec .img1 {
+    display: block;
+}
+
+.highlights .sec .img2 {
+    display: none;
 }
 
 .description h2 {
@@ -480,16 +592,16 @@ h3 {
 
 }
 
- .promotion-cards {
+.promotion-cards {
     /* outline: 1px solid red; */
     display: flex;
     overflow-x: scroll;
     scrollbar-width: none;
-    /* scroll-snap-type: x mandatory; */ 
+    /* scroll-snap-type: x mandatory; */
     /* flex: 0 0 auto;  */
     min-width: 90%;
     /* width: 330px; */
-    /* scroll-snap-align: start;*/  
+    /* scroll-snap-align: start;*/
     box-sizing: border-box;
     padding: 0 20px;
     margin: 0 20px;
@@ -513,8 +625,10 @@ h3 {
     width: auto;
     object-fit: cover;
     display: block;
-} 
-
+}
+.promotions .img2 {
+    display: none;
+}
 .promotion-card span {
     font-size: 14px;
     font-weight: 500;
@@ -588,6 +702,10 @@ h3 {
     /* z-index: 2; */
 }
 
+.conclusion .conclusion-sec .img2 {
+    display: none;
+}
+
 .conclusion-sec .con-contents {
     display: flex;
     flex-direction: column;
@@ -641,9 +759,14 @@ h3 {
         "Segoe UI Emoji",
         "Segoe UI Symbol";
     padding: 24px 16px;
-
+    width: 1130px;
 }
-
+.cover {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 .info-head {
     display: flex;
     text-align: center;
@@ -738,16 +861,33 @@ h3 {
         "Segoe UI Symbol";
     padding: 0 20px;
     color: white;
+    display: flex;
+    flex-direction: column;
+}
+footer {
+    width: 100vw;
+    background-color: #191919ff;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center ;
 }
 
+.linkss {
+    display: flex;
+    justify-self: center;
+    width: 1120px;
+}
 .links .link-group {
     display: flex;
     flex-direction: column;
+
 }
 
 .links .link {
     display: flex;
     flex-direction: column;
+    flex: 1 1 0%;
 }
 
 .links a {
@@ -787,6 +927,7 @@ h3 {
 
 .links .link-main-head h2 {
     font-size: 16px;
+    margin: 0;
 }
 
 .mobile-app {
@@ -834,11 +975,15 @@ h3 {
 
 .copyright {
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 .copyright span {
     padding-left: 10px;
     font-size: 12px;
+    color: rgb(209, 205, 205);
 }
 
 /* main .sticky {
@@ -913,6 +1058,12 @@ h3 {
     display: flex;
 } */
 
+@media screen and (min-width: 481px) {
+    .info-head {
+        justify-content: center;
+        padding-top: 48px 0;
+    }
+}
 
 @media screen and (min-width: 531px) {
     .info-head {
@@ -932,136 +1083,230 @@ h3 {
 }
 
 @media screen and (min-width: 768px) {
-    .logins {
-            display: flex;
-            gap: 20px;
-            /* justify-content: right; */
-        }
-    .btnss {
-        padding: 0 24px 0 16px;
-        /* gap: 30px;     */
-    }
-
-    .hero .title1 {
-        display: none;  
-    }
-    .hero .tag {
+    .social-medias {
         display: flex;
-        gap: 5px;
-        align-items: center;
-        justify-content: center;
-        padding-left: 35%;
+        flex-direction: row-reverse;
+        justify-content: space-between;
     }
-    .btnss .sign-in {
+    .promotions .promotion-cards .card-head h2 {
+        font-size: 40px;
+        margin-bottom: 0;
+    }
+    .promotions .img2 {
         display: block;
     }
-    .btnss .sign-up {
-        display: block;
-    }
-    .btnss .login-btn {
+    .promotions .img1 {
         display: none;
     }
+    .top-nav-change .sign-in {
+        display: block;
+    }
+
+    .top-nav-change .sign-up {
+        display: block;
+    }
+
+    .login-bn {
+        display: none;
+    }
+
+    .hero {
+        height: 649.31px;
+    }
+
     .button1 {
         display: none;
     }
+
     header .top-nav {
-        display: none;  
+        display: none;
     }
+
+    .hero .title1 {
+        position: relative;
+        top: -182px;
+        background-color: #f44322;
+        height: 70px;
+        max-width: 100%;
+    }
+
     .title2 .sub-head {
         max-width: 100%;
         font-size: 40px;
     }
+
+    .location .loc-items {
+        gap: 123px;
+        border: 2px solid rgb(19, 90, 255);
+    }
+
+    .location .loc-btns {
+        margin-bottom: 118px;
+    }
+
+    .location .loc-btns .login {
+        display: none;
+    }
+
+    .location .loc-btns .current-loc {
+        display: none;
+    }
+
+    .location .loc-btns .login-change {
+        display: flex;
+        font-weight: 700;
+        margin-bottom: 93px;
+    }
+
+    .features {
+        margin-top: 32px;
+    }
+
     /* ad  */
     .ad-container {
-            display: none;
-        }
+        display: none;
+    }
+
     /* highlights  */
-    
+
     .highlights .sec {
-            flex-direction: row-reverse;
-            padding: 60px 20px 20px;
-            max-width: 100%;
-            margin: 0 0 -40px;
-            justify-content: center;
-            gap: 56px;
-        }
-        .highlights .uup {
-            padding: 20px;
-        }
-        .highlights .bot {
-            margin: 0;
-            padding: 80px 20px 20px;
-            flex-direction: row;
-            gap: 86px;
-        }
-        .highlights .description {
-            justify-content: center;
-        }
-        .description h2 {
+        flex-direction: row-reverse;
+        padding: 60px 20px 20px;
+        max-width: 100%;
+        margin: 0 0 -40px;
+        justify-content: center;
+        gap: 56px;
+    }
+
+    .highlights .uup {
+        padding: 20px;
+    }
+
+    .highlights .sec .img1 {
+        display: none;
+    }
+
+    .highlights .sec .img2 {
+        display: block;
+    }
+
+    .highlights .bot {
+        margin: 0;
+        padding: 80px 20px 20px;
+        flex-direction: row;
+        gap: 86px;
+    }
+
+    .highlights .description {
+        justify-content: center;
+    }
+
+    .description h2 {
         font-size: 40px;
         max-width: 300px;
         line-height: 1;
         padding-top: -90px;
         margin-top: -12px;
-        }   
-        .link-btn {
+    }
+
+    .link-btn {
         margin-top: 30px;
-        }
-        .highlights .description p {
-            padding-top: 20px;
-            max-width: 400px;
-            font-size: 16px;
-            margin-top: 0px;
-        }
-        .highlights img {
-            width: 100%;
+    }
+
+    .highlights .description p {
+        padding-top: 20px;
+        max-width: 400px;
+        font-size: 16px;
+        margin-top: 0px;
+    }
+
+    .highlights img {
+        width: 100%;
         height: 500px;
         box-sizing: border-box;
         width: clamp(335.13px, 50vw, 695.03px);
-            }
+    }
+
+    .highlights .sec-with-back {
+        height: 600px;
+    }
+
+    .highlights .sec-with-back h2 {
+        max-width: 695px;
+        font-size: 40px;
+        align-self: center;
+    }
+
+    .highlights .sec-with-back h3 {
+        font-size: 20px;
+    }
+
+    .highlights .sec-with-back p {
+        font-size: 16px;
+        max-width: 550px;
+        align-self: center;
+    }
+
+    .highlights .sec-with-back a {
+        font-size: 16px;
+        padding: 10px 12px 12px 12px;
+    }
+
+    .link-btn a {
+        padding: 10px 12px 10px 12px;
+    }
+
     /* promotion  */
 
     .promotions .card-main-head {
-            font-size: 32px;
-            max-width: 500px;
-            text-align: center;
-            margin: 0 auto;
+        font-size: 32px;
+        max-width: 500px;
+        text-align: center;
+        margin: 0 auto;
     }
+
     .promotion-cards {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            justify-items: center;
-            /* Center cards inside columns */
-            gap: 10px;
-            margin: 0 auto;
-            /* Center the grid horizontally */
-            padding: 0;
-            width: 100%;
-            max-width: 1200px;
-            /* Prevent overflow */
-            box-sizing: border-box;
-        }
-    
-        /* Individual Card */
-        .promotion-card {
-            padding: 20px 20px;
-            max-width: 552px;
-    
-        }
-    
-        .promotion-card img {
-            width: 100%;
-            max-height: 60vw;
-            height: auto;
-            /* min-height: 379.2px; */
-            /* Shrinks height as width shrinks */
-            object-fit: cover;
-            margin-bottom: 20px;
-        }
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        /* Center cards inside columns */
+        gap: 10px;
+        margin: 0 auto;
+        /* Center the grid horizontally */
+        padding: 0;
+        width: 100%;
+        max-width: 1200px;
+        /* Prevent overflow */
+        box-sizing: border-box;
+    }
+
+    .promotion-card .prom-btn a {
+        padding: 5px 12px 9px 12px;
+    }
+
+    /* Individual Card */
+    .promotion-card {
+        padding: 20px 20px;
+        max-width: 552px;
+
+    }
+
+    .promotion-card img {
+        width: 100%;
+        max-height: 60vw;
+        height: auto;
+        /* min-height: 379.2px; */
+        /* Shrinks height as width shrinks */
+        object-fit: cover;
+    }
 
 
 
     /* conclusion  */
+    .con-btn a {
+        font-size: 16px;
+        padding: 5px 12px 9px 12px;
+    }
 
     .conclusion .con-main-head span {
         font-size: 32px;
@@ -1093,6 +1338,7 @@ h3 {
         font-size: 40px;
         margin-top: -50px;
         line-height: 1;
+        max-width: 360px;
     }
 
     .con-contents .con-btn {
@@ -1103,15 +1349,55 @@ h3 {
         margin-top: -13px;
         font-size: 14px;
         font-weight: 500;
+        max-width: 400px;
     }
 
     .con-img img {
         height: 500px;
     }
 
+    .conclusion .conclusion-sec .img1 {
+        display: none;
+    }
+
+    .conclusion .conclusion-sec .img2 {
+        display: block;
+    }
+
     /* link  */
 
+
+    .links .popular {
+        display: flex;
+        flex-direction: column;
+        align-self: stretch;
+    }
+
+    .links .popular .link-group {
+        display: flex;
+        flex-direction: row;
+    }
     .links .link-main-head {
+        align-self: flex-start;
+    }
+    .links a {
+        text-align: left;
+        }
+    .links .link-group {
+        gap: 14px;
+    }
+
+    .links .sec-line {
+        display: flex;
+        justify-content: space-between;
+    }
+    .links .link-main-head h2 {
+        align-self: left;
+}
+        .links .link-main-head {
+            display: contents;
+        }
+    /* .links .link-main-head {
         display: flex;
         justify-content: left;
         margin-bottom: 8px;
@@ -1123,37 +1409,73 @@ h3 {
         justify-content: space-between;
     }
 
-    .links a {
-        text-align: left;
-    }
+    
+    .info {
+        padding-top: 48px;
+    } */
+}
+@media screen and (min-width: 419px) {
     
 }
-
 @media screen and (min-width: 796px) {
     .info-contents .cities {
         grid-template-columns: repeat(3, 1fr);
     }
+
+    .info {
+        margin-top: 48px;
+    }
 }
-
+@media screen and (min-width: 805px) {
+    .links a {
+        text-align: left;
+        max-width: 100%;
+    }
+}
 @media screen and (min-width: 960px) {
-    .btnss .tag svg {
-        width: 131px;
-        height: 21px;
+    .hero .heading .title1 .logo-sy {
+        width: 40px;
+        height: 24px;
     }
 
-    .btnss .tag .ss svg {
-        width: 30px;
-        height: 50px;
+    .hero .heading .title1 .logo-nm {
+        width: 156px;
+        height: 48px;
     }
 
-    .btnss .tag {
-        justify-content: center;
-        gap: 5px;
+
+    .location .loc-btns .login-change {
+        display: none;
     }
 
-    .hero .tag {
-        padding-left: 45%;
+    .loc-btns .login-change-2 {
+        display: flex;
+        font-weight: 700;
+        margin-bottom: 83px;
     }
+
+    .location .loc-items .search {
+        display: none;
+    }
+
+    .location .loc-items .new {
+        display: block;
+        padding: 10px;
+    }
+    .links .sec-out {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+    .links .sec-line {
+        gap: 30px;
+    }
+    .grouping {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
 }
 
 /* @media screen and (min-width: 960px) {
@@ -1183,6 +1505,7 @@ h3 {
     .info-contents .cities {
         grid-template-columns: repeat(4, 1fr);
     }
+
     .tag {
         padding: 0 24px 0 16px;
     }
@@ -1196,24 +1519,25 @@ h3 {
 
 @media screen and (min-width: 1160px) {
 
-    .links {
+    /* .links {
         display: flex;
         flex-direction: column;
-        /* align-items: stretch; */
+        /* align-items: stretch; 
         text-align: center;
     }
 
     .links .sub1 {
         flex-direction: row;
-        /* text-align: left; */
+        /* text-align: left; 
         justify-content: center;
         gap: 100px;
     }
 
     .link-group {
         gap: 20px;
-    }
+    } */
 }
+
 @media screen and (min-width: 1184px) {
     .features {
         flex-direction: row;
@@ -1237,6 +1561,14 @@ h3 {
         height: 154px;
         margin: 0 32px 0 0;
     }
-
-
+    .features .feature-card {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+    }
+    .feature-card a {
+            font-size: 18px;
+        }
+        .feature-card .ad-link {
+            margin: 12px 0;
+        }
 }
